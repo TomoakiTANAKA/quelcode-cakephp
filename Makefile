@@ -8,6 +8,6 @@ bash: ## php server へのログイン
 	docker-compose exec php bash
 
 .PHONY: sql
-bash: ## mysql server へのログインしてmysqlにつなぐ
+sql: ## mysql server へのログインしてmysqlにつなぐ
 	docker-compose up -d
 	docker-compose exec mysql mysql -u root -proot docker_db
