@@ -1,7 +1,7 @@
 <?php
 use Migrations\AbstractMigration;
 
-class CreateUser extends AbstractMigration
+class CreateUsers extends AbstractMigration
 {
     /**
      * Change Method.
@@ -12,7 +12,7 @@ class CreateUser extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('user');
+        $table = $this->table('users');
         $table->addColumn('username', 'string', [
             'default' => null,
             'limit' => 100,

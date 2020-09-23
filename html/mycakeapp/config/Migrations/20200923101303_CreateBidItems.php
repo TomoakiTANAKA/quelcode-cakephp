@@ -12,7 +12,7 @@ class CreateBidItems extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('biditems');
+        $table = $this->table('bid_items');
         $table->addColumn('user_id', 'integer', [
             'default' => null,
             'limit' => 11,
