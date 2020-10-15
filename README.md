@@ -32,6 +32,11 @@
 1. docker-compose.yml があるディレクトリで下記のコマンドを実行する。初回起動には時間がかかる
 
    ```
+   # 初回起動時のワンライナー
+   sh dockerfile/setup.sh
+   ```
+
+   ```
    docker-compose up -d
    ```
 
