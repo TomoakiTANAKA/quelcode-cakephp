@@ -1,7 +1,10 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Auth\DefaultPasswordHasher;
+use Cake\Event\Event;
 
 /**
  * Users Controller
@@ -12,6 +15,75 @@ use App\Controller\AppController;
  */
 class UsersController extends AppController
 {
+    public function initialize()
+    {
+        parent::initialize();
+
+        $this->loadComponent('RequestHandler');
+        $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'authroize' => ['Controller'],
+            'authenticate' => [
+                'Form' => [
+                    'fields' => [
+                        'username' => 'username',
+                        'password' => 'password',
+                    ],
+                ],
+            ],
+            'loginRedirect' => [
+                'controller' => 'Users',
+                'action' => 'login',
+            ],
+            'logoutRedirect' => [
+                'controller' => 'Users',
+                'action' => 'logout',
+            ],
+            'authError' => 'ログインしてください。',
+        ]);
+    }
+
+    /**
+     * ログイン
+     */
+    public function login()
+    {
+        // @todo
+
+    }
+
+    /**
+     * ログアウト
+     */
+    public function logout()
+    {
+        // @todo
+
+    }
+
+    /**
+     * 認証を使わないページの設定
+     * @param Event $event
+     * @return \Cake\Http\Response|void|null
+     */
+    public function beforeFilter(Event $event)
+    {
+
+        // @todo
+    }
+
+    /**
+     * 認証時のロールのチェック
+     *
+     * @param $user
+     * @return bool|void
+     */
+    public function isAuthorized($user = null)
+    {
+        // @todo
+
+    }
+
     /**
      * Index method
      *
