@@ -1,4 +1,7 @@
 docker/mysql/data
 phpmyadmin
 .env
+
+# editor
 .vscode
+.idea/
